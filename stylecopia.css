@@ -1,0 +1,223 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Budge-Regular";
+    src: url(assets/fonts/Budge/Budge-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Budge-Line";
+    src: url(assets/fonts/Budge/Budge-Line.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Budge-Shadow";
+    src: url(assets/fonts/Budge/Budge-Shadow.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Pacifico";
+    src: url(assets/fonts/Pacifico/Pacifico-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+
+    /* Fonts */
+    --Budge-Regular: "Budge-Regular", sans-serif;
+    --Budge-Line: "Budge-Line", sans-serif;
+    --Budge-Shadow: "Budge-Shadow", sans-serif;
+    --Pacifico: "Pacifico", system-ui;
+
+    /* Colors */
+    --Jet: rgb(61, 61, 61);
+    --Light-blue: rgb(207, 232, 242);
+    --Alice-blue: rgb(239, 248, 251);
+    --Carnation-pink: rgb(255, 153, 190);
+
+}
+
+body {
+    background-image: url(assets/img/ice-cream-background.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 270px;
+}
+
+.header__title {
+    height: 135px;
+    position: relative;
+    font-family: var(--Budge-Shadow);
+    font-size: 6.5rem;
+    color: var(--Jet);
+    top: 65px;
+    z-index: 30;
+}
+
+.header__title::after {
+    content: "Ice Cream Nova";
+    position: absolute;
+    font-family: var(--Budge-Line);
+    color: var(--Carnation-pink);
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+.header__title::before {
+    content: "Ice Cream Nova";
+    position: absolute;
+    font-family: var(--Budge-Regular);
+    color: var(--Light-blue);
+    z-index: 10;
+}
+
+.ice-creams {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 53px repeat(3, 1fr);
+    gap: 10px;
+    grid-template-areas: "navlist title title title"
+        "navlist list list list"
+        "navlist list list list"
+        "navlist list list list";
+    margin: 15px;
+}
+
+.ice-creams__title {
+    grid-area: title;
+    background-color: var(--Alice-blue);
+    font-family: var(--Pacifico);
+    font-size: 28px;
+    text-align: center;
+    color: var(--Carnation-pink);
+    padding: 0 10px;
+    border-radius: 15px;
+    border: 2px solid var(--Carnation-pink);
+    box-shadow: 3px 3px 5px #8650A5;
+}
+
+.ice-creams-list {
+    grid-area: list;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.ice-creams-nav-list,
+.ice-creams-list__item {
+    background-color: var(--Alice-blue);
+    font-family: var(--Pacifico);
+    font-size: 20px;
+    color: var(--Carnation-pink);
+    padding: 0 25px;
+    border-radius: 15px;
+    border: 2px solid var(--Carnation-pink);
+    box-shadow: 3px 3px 5px #8650A5;
+}
+
+.ice-creams-nav-list {
+    grid-area: navlist;
+    font-size: 22px;
+    list-style: none;
+    padding: 10px;
+}
+
+.ice-creams-nav-list__item--size {
+    font-size: 18px;
+}
+
+
+.ice-creams-list__item {
+    list-style: none;
+}
+
+.ice-cream {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.ice-cream__img {
+    width: 250px;
+    margin: 20px 0 10px;
+    border-radius: 10px;
+    border: 2px solid var(--Carnation-pink);
+}
+
+.ice-cream-description {
+    width: 260px;
+    margin: 10 0px;
+}
+
+.ice-cream-description__title {
+    font-size: 25px;
+    text-align: center;
+    line-height: 1.9rem;
+}
+
+.ice-cream-description__paragraph {
+    width: 260px;
+    font-size: 17px;
+    line-height: 1.2rem;
+    padding: 5px 0 15px;
+    text-align: center;
+}
+
+.ice-cream-description__paragraph--width {
+    width: 265px;
+}
+
+.ice-cream__button {
+    position: absolute;
+    top: 0;
+    left: 2%;
+    font-family: var(--Pacifico);
+    background-color: var(--Alice-blue);
+    color: var(--Carnation-pink);
+    margin: 10px;
+    padding: 3px 20px;
+    border: 2px solid var(--Carnation-pink);
+    border-radius: 15px;
+    transition: .2s;
+}
+
+.ice-cream__button:hover {
+    box-shadow: 3px 3px 5px #8650A5;
+    transition: .2s;
+}
+
+.ice-cream__button:active {
+    color: red;
+    border-color: red;
+    transition: .2s;
+}

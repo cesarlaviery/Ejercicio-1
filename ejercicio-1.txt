@@ -1,0 +1,10 @@
+Tres chicos de 23 años, perfectamente normales entran a una heladeria a comprar un helado, pero hay un problema,
+los precios no estan a lado de cada estante con su respectivo helado, ellos quieren comprar el helado más caro que puedan
+comprar con el dinero que tienen, cada uno tiene distintas cantidades de dinero y hay una tabla en la que podemos basarnos
+para saber el costo de cada helado.
+
+Crear Soluciones:
+
+- Pedirles el monto que tienen y mostrarles el helado más caro que puedan comprar.
+- Si hay dos o más con el mismo precio, mostrar ambos.
+- Cofla quiere saber cuanto es el vuelto.
