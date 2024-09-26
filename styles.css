@@ -49,8 +49,10 @@
 }
 
 body {
+    height: 100vh;
     background-image: url(assets/img/ice-cream-background.jpg);
     background-attachment: fixed;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
