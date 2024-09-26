@@ -289,7 +289,6 @@ body {
         grid-template-areas: "title title title title"
             "navlist list list list"
             "navlist list list list";
-        margin: 20px;
     }
 
     .ice-creams-nav-list__item--size {
