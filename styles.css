@@ -253,10 +253,10 @@ body {
 }
 
 .modal {
-    width: 30%;
+    width: 90%;
     display: block;
     background-color: var(--Alice-blue);
-    margin: 17% auto;
+    margin: 0 auto;
     padding: 20px;
     border: 2px solid var(--Carnation-pink);
     border-radius: 30px;
@@ -293,7 +293,8 @@ body {
 }
 
 .mostrar-modal {
-    display: block;
+    display: flex;
+    align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -317,6 +318,10 @@ body {
 
     .ice-creams-list {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modal {
+        width: 50%;
     }
 
 }
