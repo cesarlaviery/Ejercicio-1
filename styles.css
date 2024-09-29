@@ -32,6 +32,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Lobster";
+    src: url(assets/fonts/Lobster/Lobster-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 :root {
 
     /* Fonts */
@@ -39,12 +47,15 @@
     --Budge-Line: "Budge-Line", sans-serif;
     --Budge-Shadow: "Budge-Shadow", sans-serif;
     --Pacifico: "Pacifico", system-ui;
+    --Lobster: "Lobster", system-ui;
 
     /* Colors */
     --Jet: rgb(61, 61, 61);
     --Light-blue: rgb(207, 232, 242);
     --Alice-blue: rgb(239, 248, 251);
     --Carnation-pink: rgb(255, 153, 190);
+    --Royal-purple: rgb(134, 80, 165);
+    --Red: rgb(255, 0, 0);
 
 }
 
@@ -119,7 +130,7 @@ body {
     padding: 0 10px;
     border-radius: 15px;
     border: 2px solid var(--Carnation-pink);
-    box-shadow: 3px 3px 5px #8650A5;
+    box-shadow: 3px 3px 5px var(--Royal-purple);
 }
 
 .ice-creams-list {
@@ -139,7 +150,7 @@ body {
     padding: 0 25px;
     border-radius: 15px;
     border: 2px solid var(--Carnation-pink);
-    box-shadow: 3px 3px 5px #8650A5;
+    box-shadow: 3px 3px 5px var(--Royal-purple);
 }
 
 .ice-creams__navbar {
@@ -218,14 +229,71 @@ body {
 }
 
 .ice-cream__button:hover {
-    box-shadow: 3px 3px 5px #8650A5;
+    box-shadow: 3px 3px 5px var(--Royal-purple);
     transition: .2s;
 }
 
-.ice-cream__button:active {
-    color: red;
-    border-color: red;
+.ice-cream__button--active {
+    color: var(--Red);
+    border-color: var(--Red);
+    box-shadow: 3px 3px 5px var(--Red);
     transition: .2s;
+}
+
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 40;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+    width: 30%;
+    display: block;
+    background-color: var(--Alice-blue);
+    margin: 17% auto;
+    padding: 20px;
+    border: 2px solid var(--Carnation-pink);
+    border-radius: 30px;
+}
+
+.modal__title {
+    font-family: var(--Lobster);
+    font-size: 26px;
+    color: var(--Carnation-pink);
+}
+
+.modal__paragraph {
+    font-family: var(--Lobster);
+    font-size: 18px;
+    padding: 10px 0;
+    line-height: 1.1rem;
+    color: var(--Carnation-pink);
+}
+
+.modal__close-button {
+    color: var(--Carnation-pink);
+    float: right;
+    font-family: var(--Lobster);
+    padding: 5px 10px;
+    background-color: var(--Alice-blue);
+    border: 2px solid var(--Carnation-pink);
+    border-radius: 10px;
+    transition: .4s;
+}
+
+.modal__close-button:hover {
+    box-shadow: 2px 2px 5px var(--Royal-purple);
+    transition: .4s;
+}
+
+.mostrar-modal {
+    display: block;
 }
 
 @media (min-width: 768px) {

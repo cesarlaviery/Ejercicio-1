@@ -8,6 +8,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 
+    <!-- Script -->
+    <script defer src="script.js"></script>
 
     <title>Ice Cream Nova</title>
 </head>
@@ -26,10 +28,12 @@
 
                 <ul class="ice-creams-nav-list">
                     <li class="ice-creams-nav-list__item">Helado de Ube - $4.50</li>
-                    <li class="ice-creams-nav-list__item ice-creams-nav-list__item--size">Helado de Brownie con Nueces - $6.50</li>
+                    <li class="ice-creams-nav-list__item ice-creams-nav-list__item--size">Helado de Brownie con Nueces -
+                        $6.50</li>
                     <li class="ice-creams-nav-list__item">Helado de Vainilla - $3.50</li>
                     <li class="ice-creams-nav-list__item">Helado de Frutilla - $4.50</li>
-                    <li class="ice-creams-nav-list__item ice-creams-nav-list__item--size">Helado de Salado Caramelo - $6.00</li>
+                    <li class="ice-creams-nav-list__item ice-creams-nav-list__item--size">Helado de Salado Caramelo -
+                        $6.00</li>
                     <li class="ice-creams-nav-list__item">Helado de Matcha - $4.50</li>
                     <li class="ice-creams-nav-list__item">Helado de Cheesecake - $6.00</li>
                     <li class="ice-creams-nav-list__item">Helado de Coco - $5.00</li>
@@ -132,6 +136,15 @@
                     </figure>
                 </li>
             </ul>
+
+            <div class="modal-container">
+                <dialog class="modal">
+                    <h4 class="modal__title">¡Error en los precios!</h4>
+                    <p class="modal__paragraph">Esta opción esta teniendo problemas ultimamente, por favor verifique los precios en la tabla.</p>
+                    <button class="modal__close-button">Cerrar</button>
+                </dialog>
+            </div>
+
         </article>
     </main>
 
