@@ -141,7 +141,13 @@ body {
     gap: 10px;
 }
 
-.ice-creams-nav-list,
+#ice-cream-list-modal {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.ice-creams-navbar,
 .ice-creams-list__item {
     background-color: var(--Alice-blue);
     font-family: var(--Pacifico);
@@ -153,8 +159,35 @@ body {
     box-shadow: 3px 3px 5px var(--Royal-purple);
 }
 
-.ice-creams__navbar {
+.ice-creams-navbar {
     grid-area: navlist;
+    height: 420px;
+    padding: 0;
+}
+
+.ice-cream-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.ice-cream-input__input {
+    width: 70%;
+    font-family: var(--Pacifico);
+    font-size: 20px;
+    background-color: var(--Alice-blue);
+    color: var(--Carnation-pink);
+    padding: 0px 20px 3px;
+    border: 2px solid var(--Carnation-pink);
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.ice-cream-input__input:focus {
+    outline: 2px solid var(--Royal-purple);
+    box-shadow: 3px 3px 5px var(--Royal-purple);
+    transition: .3s;
 }
 
 .ice-creams-nav-list {
@@ -360,7 +393,7 @@ body {
 
 
     .ice-creams {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: 338px repeat(3, 1fr);
         grid-template-areas: "title title title title"
             "navlist list list list"
             "navlist list list list";

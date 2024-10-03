@@ -11,6 +11,9 @@
     <!-- Script -->
     <script defer src="script.js"></script>
 
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/c076dc9be0.js" crossorigin="anonymous"></script>
+
     <title>Ice Cream Nova</title>
 </head>
 
@@ -24,7 +27,7 @@
         <article class="ice-creams">
             <h2 class="ice-creams__title">Lista de Helados</h2>
 
-            <nav class="ice-creams__navbar">
+            <nav class="ice-creams-navbar">
 
                 <ul class="ice-creams-nav-list">
                     <li class="ice-creams-nav-list__item">Helado de Ube - $4.50</li>
@@ -40,10 +43,23 @@
                     <li class="ice-creams-nav-list__item">Helado de Chocolate - $3.50</li>
                 </ul>
 
+                <span class="ice-cream-input">
+                    <input class="ice-cream-input__input" type="number" min="1" placeholder="Ingrese su monto">
+                    <i class="fa-solid fa-circle-info ice-cream-input__icon"></i>
+                </span>
+
+                <div class="modal-container" id="modal-2">
+                    <dialog class="modal">
+                        <ul class="ice-creams-list" id="ice-cream-list-modal">
+                        </ul>
+                        <button class="modal__close-button" id="close-button-2">Cerrar</button>
+                    </dialog>
+                </div>
+
             </nav>
 
             <ul class="ice-creams-list">
-                <li class="ice-creams-list__item">
+                <li class="ice-creams-list__item" id="ice-creams-list__item-1">
                     <figure class="ice-cream">
                         <img class="ice-cream__img" src="assets/img/Helado-1.jpeg" alt="Helado de Ube">
                         <figcaption class="ice-cream-description">
@@ -54,7 +70,7 @@
                         <button class="ice-cream__button">Precio</button>
                     </figure>
                 </li>
-                <li class="ice-creams-list__item">
+                <li class="ice-creams-list__item" id="ice-creams-list__item-2">
                     <figure class="ice-cream">
                         <img class="ice-cream__img" src="assets/img/Helado-2.jpeg" alt="Helado de Brownie con Nueces">
                         <figcaption class="ice-cream-description">
@@ -137,11 +153,11 @@
                 </li>
             </ul>
 
-            <div class="modal-container">
+            <div class="modal-container" id="modal-1">
                 <dialog class="modal">
-                    <h4 class="modal__title">¡Error en los precios!</h4>
-                    <p class="modal__paragraph">Esta opción esta teniendo problemas ultimamente, por favor verifique los precios en la tabla.</p>
-                    <button class="modal__close-button">Cerrar</button>
+                    <h4 class="modal__title"></h4>
+                    <p class="modal__paragraph"></p>
+                    <button class="modal__close-button" id="close-button-1">Cerrar</button>
                 </dialog>
             </div>
 
