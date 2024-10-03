@@ -8,8 +8,8 @@ const amountInput = document.querySelector(".ice-cream-input__input");
 const SecondModal = document.querySelector("#modal-2");
 const SecondCloseButton = document.querySelector("#close-button-2");
 const iceCreamModal = document.querySelector("#ice-cream-list-modal");
-const listItemFirts = document.querySelector("#ice-creams-list__item-1");
-const listItemSecond = document.querySelector("#ice-creams-list__item-2");
+const iceCreamList = document.querySelectorAll(".ice-creams-list__item");
+const iceCreamListItem = [];
 
 priceButton.forEach(boton => {
     boton.addEventListener("mousedown", () => {
@@ -53,6 +53,10 @@ SecondCloseButton.addEventListener("click", () => {
     iceCreamModal.innerHTML= " "
 });
 
+iceCreamList.forEach((elemento) => {
+    iceCreamListItem.push(elemento);
+});
+
 function validarNumero(input) {
     const regex = /^[1-9]\d*(\.\d+)?$/;
     const amount = amountInput.value;
@@ -70,15 +74,23 @@ function validarNumero(input) {
     
         if(amount >= 3.5 && amount < 4.5) {
             SecondModal.classList.add("mostrar-modal");
-            iceCreamModal.appendChild(listItemFirts.cloneNode(true));
-            iceCreamModal.appendChild(listItemSecond.cloneNode(true));
+            iceCreamModal.appendChild(iceCreamListItem[2].cloneNode(true));
+            iceCreamModal.appendChild(iceCreamListItem[8].cloneNode(true));
         } else if (amount >= 4.5 && amount < 5) {
+            SecondModal.classList.add("mostrar-modal");
+            iceCreamModal.appendChild(iceCreamListItem[0].cloneNode(true));
+            iceCreamModal.appendChild(iceCreamListItem[3].cloneNode(true));
+            iceCreamModal.appendChild(iceCreamListItem[5].cloneNode(true));
         } else if (amount >= 5 && amount < 6) {
-
+            SecondModal.classList.add("mostrar-modal");
+            iceCreamModal.appendChild(iceCreamListItem[7].cloneNode(true));
         } else if (amount >= 6 && amount < 6.5) {
-            
+            SecondModal.classList.add("mostrar-modal");
+            iceCreamModal.appendChild(iceCreamListItem[4].cloneNode(true));
+            iceCreamModal.appendChild(iceCreamListItem[6].cloneNode(true));
         } else if (amount >= 6.5) {
-            
+            SecondModal.classList.add("mostrar-modal");
+            iceCreamModal.appendChild(iceCreamListItem[1].cloneNode(true));
         };
 
     };
