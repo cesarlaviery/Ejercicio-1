@@ -11,6 +11,19 @@ const iceCreamModal = document.querySelector("#ice-cream-list-modal");
 const iceCreamList = document.querySelectorAll(".ice-creams-list__item");
 const iceCreamListItem = [];
 
+const modalTextContent = (modalTitleText, modalParagraphText) => {
+    modalTitle.textContent = modalTitleText;
+    modalParagraph.textContent = modalParagraphText;
+};
+
+const showOrHideModal = (modalPosition, ClassToAdd) => {
+    modalPosition.classList.toggle(ClassToAdd);
+};
+
+const cloneAndAddIceCream = (index) => {
+    iceCreamModal.appendChild(iceCreamListItem[index].cloneNode(true));
+};
+
 priceButton.forEach(boton => {
     boton.addEventListener("mousedown", () => {
         boton.textContent = "Error";
@@ -20,40 +33,34 @@ priceButton.forEach(boton => {
     boton.addEventListener("mouseup", () => {
         boton.textContent = "Precio"
         boton.classList.remove("ice-cream__button--active");
-        firstModal.classList.add("mostrar-modal");
-
-        modalTitle.textContent = "¡Error en los precios!";
-        modalParagraph.textContent = `Esta opción esta teniendo problemas ultimamente, por favor verifique los precios 
-        en la tabla.`;
+        showOrHideModal(firstModal, "mostrar-modal");
+        modalTextContent(`¡Error en los precios!`, `Esta opción esta teniendo problemas ultimamente, por favor verifique 
+        los precios en la tabla.`);
     });
 });
 
 firstCloseButton.addEventListener("click", () => {
-    firstModal.classList.remove("mostrar-modal");
+    showOrHideModal(firstModal, "mostrar-modal");
 });
 
 informationButton.addEventListener("click", () => {
-    firstModal.classList.add("mostrar-modal");
-
-    modalTitle.textContent = "¡Elige tu helado más lujoso!";
-    modalParagraph.textContent = `¿Quieres darte un gusto? Indícanos cuánto dinero tienes disponible y te mostraremos el 
-                                helado más delicioso que puedes comprar con ese presupuesto.`;
+    showOrHideModal(firstModal, "mostrar-modal");
+    modalTextContent(`¡Elige tu helado más lujoso!`, `¿Quieres darte un gusto? Indícanos cuánto dinero tienes disponible 
+    y te mostraremos el helado más delicioso que puedes comprar con ese presupuesto.`);
 });
 
 amountInput.addEventListener("keydown", (event) => {
 
     if (event.keyCode === 13) {
-
         if (!SecondModal.classList.contains("mostrar-modal--ice-creams")) {
             validarNumero(amountInput);
         }
-
     };
 
 });
 
 SecondCloseButton.addEventListener("click", () => {
-    SecondModal.classList.remove("mostrar-modal--ice-creams");
+    showOrHideModal(SecondModal, "mostrar-modal--ice-creams");
     iceCreamModal.innerHTML = " "
 });
 
@@ -69,36 +76,33 @@ function validarNumero(input) {
 
         input.value = input.value.replace(/[^0-9]/g, '');
 
-        firstModal.classList.add("mostrar-modal");
-
-        modalTitle.textContent = "¡Error!";
-        modalParagraph.textContent = `Por favor, ingrese un número válido.`;
+        showOrHideModal(firstModal, "mostrar-modal");
+        modalTextContent(`¡Error!`, `Por favor, ingrese un número válido.`);
 
     } else {
 
         if (amount >= 3.5 && amount < 4.5) {
-            SecondModal.classList.add("mostrar-modal--ice-creams");
-            iceCreamModal.appendChild(iceCreamListItem[2].cloneNode(true));
-            iceCreamModal.appendChild(iceCreamListItem[8].cloneNode(true));
+            showOrHideModal(SecondModal, "mostrar-modal--ice-creams");
+            cloneAndAddIceCream(2);
+            cloneAndAddIceCream(8);
         } else if (amount >= 4.5 && amount < 5) {
-            SecondModal.classList.add("mostrar-modal--ice-creams");
-            iceCreamModal.appendChild(iceCreamListItem[0].cloneNode(true));
-            iceCreamModal.appendChild(iceCreamListItem[3].cloneNode(true));
-            iceCreamModal.appendChild(iceCreamListItem[5].cloneNode(true));
+            showOrHideModal(SecondModal, "mostrar-modal--ice-creams");
+            cloneAndAddIceCream(0);
+            cloneAndAddIceCream(3);
+            cloneAndAddIceCream(5);
         } else if (amount >= 5 && amount < 6) {
-            SecondModal.classList.add("mostrar-modal--ice-creams");
-            iceCreamModal.appendChild(iceCreamListItem[7].cloneNode(true));
+            showOrHideModal(SecondModal, "mostrar-modal--ice-creams");
+            cloneAndAddIceCream(7);
         } else if (amount >= 6 && amount < 6.5) {
-            SecondModal.classList.add("mostrar-modal--ice-creams");
-            iceCreamModal.appendChild(iceCreamListItem[4].cloneNode(true));
-            iceCreamModal.appendChild(iceCreamListItem[6].cloneNode(true));
+            showOrHideModal(SecondModal, "mostrar-modal--ice-creams");
+            cloneAndAddIceCream(4);
+            cloneAndAddIceCream(6);
         } else if (amount >= 6.5) {
-            SecondModal.classList.add("mostrar-modal--ice-creams");
-            iceCreamModal.appendChild(iceCreamListItem[1].cloneNode(true));
+            showOrHideModal(SecondModal, "mostrar-modal--ice-creams");
+            cloneAndAddIceCream(1);
         } else {
-            firstModal.classList.add("mostrar-modal");
-            modalTitle.textContent = "Disculpe.";
-            modalParagraph.textContent = `Pero su presupuesto es inferior a nuestro rango de precios.`;
+            showOrHideModal(firstModal, "mostrar-modal");
+            modalTextContent(`Disculpe.`, `Pero su presupuesto es inferior a nuestro rango de precios.`);
         }
 
         const iceCreamFigures = iceCreamModal.querySelectorAll(".ice-cream");

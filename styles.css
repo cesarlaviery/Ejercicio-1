@@ -75,7 +75,6 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -131,7 +130,7 @@ body {
     grid-area: title;
     background-color: var(--Alice-blue);
     font-family: var(--Pacifico);
-    font-size: 28px;
+    font-size: 1.75rem;
     text-align: center;
     color: var(--Carnation-pink);
     padding: 0 10px;
@@ -158,7 +157,7 @@ body {
 .ice-creams-list__item {
     background-color: var(--Alice-blue);
     font-family: var(--Pacifico);
-    font-size: 20px;
+    font-size: 1.25rem;
     color: var(--Carnation-pink);
     padding: 0 25px;
     border-radius: 15px;
