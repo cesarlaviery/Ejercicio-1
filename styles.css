@@ -339,12 +339,12 @@ body {
 }
 
 .mostrar-modal--ice-creams {
-    display: flex;
-    align-items: center;
+    display: block;
 }
 
 .modal--margin {
     margin: 20px auto;
+    padding: 45px 30px;
 }
 
 @media (min-width: 768px) {
