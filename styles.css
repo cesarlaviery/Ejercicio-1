@@ -141,7 +141,7 @@ body {
     gap: 10px;
 }
 
-#ice-cream-list-modal {
+.ice-creams-list--flex {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
@@ -286,6 +286,7 @@ body {
 }
 
 .modal {
+    position: relative;
     width: 90%;
     display: block;
     background-color: var(--Alice-blue);
@@ -330,6 +331,14 @@ body {
     align-items: center;
 }
 
+.mostrar-modal--ice-creams {
+    display: flex;
+}
+
+.modal--margin {
+    margin: 20px auto;
+}
+
 @media (min-width: 768px) {
 
     .header__title {
@@ -342,6 +351,10 @@ body {
         grid-template-areas: "title title"
             "navlist navlist"
             "list list";
+    }
+
+    .ice-creams-navbar {
+        height: 430px;
     }
 
     .ice-creams-nav-list__item--size {
@@ -398,6 +411,10 @@ body {
             "navlist list list list"
             "navlist list list list";
         margin: 20px;
+    }
+
+    .ice-creams-navbar {
+        height: 420px;
     }
 
     .ice-creams-nav-list__item--size {

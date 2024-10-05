@@ -43,14 +43,18 @@ informationButton.addEventListener("click", () => {
 amountInput.addEventListener("keydown", (event) => {
 
     if (event.keyCode === 13) {
-        validarNumero(amountInput);
+
+        if (!SecondModal.classList.contains("mostrar-modal")) {
+            validarNumero(amountInput);
+        }
+
     };
 
 });
 
 SecondCloseButton.addEventListener("click", () => {
-    SecondModal.classList.remove("mostrar-modal");
-    iceCreamModal.innerHTML= " "
+    SecondModal.classList.remove("mostrar-modal--ice-creams");
+    iceCreamModal.innerHTML = " "
 });
 
 iceCreamList.forEach((elemento) => {
@@ -71,27 +75,38 @@ function validarNumero(input) {
         modalParagraph.textContent = `Por favor, ingrese un número válido.`;
 
     } else {
-    
-        if(amount >= 3.5 && amount < 4.5) {
-            SecondModal.classList.add("mostrar-modal");
+
+        if (amount >= 3.5 && amount < 4.5) {
+            SecondModal.classList.add("mostrar-modal--ice-creams");
             iceCreamModal.appendChild(iceCreamListItem[2].cloneNode(true));
             iceCreamModal.appendChild(iceCreamListItem[8].cloneNode(true));
         } else if (amount >= 4.5 && amount < 5) {
-            SecondModal.classList.add("mostrar-modal");
+            SecondModal.classList.add("mostrar-modal--ice-creams");
             iceCreamModal.appendChild(iceCreamListItem[0].cloneNode(true));
             iceCreamModal.appendChild(iceCreamListItem[3].cloneNode(true));
             iceCreamModal.appendChild(iceCreamListItem[5].cloneNode(true));
         } else if (amount >= 5 && amount < 6) {
-            SecondModal.classList.add("mostrar-modal");
+            SecondModal.classList.add("mostrar-modal--ice-creams");
             iceCreamModal.appendChild(iceCreamListItem[7].cloneNode(true));
         } else if (amount >= 6 && amount < 6.5) {
-            SecondModal.classList.add("mostrar-modal");
+            SecondModal.classList.add("mostrar-modal--ice-creams");
             iceCreamModal.appendChild(iceCreamListItem[4].cloneNode(true));
             iceCreamModal.appendChild(iceCreamListItem[6].cloneNode(true));
         } else if (amount >= 6.5) {
-            SecondModal.classList.add("mostrar-modal");
+            SecondModal.classList.add("mostrar-modal--ice-creams");
             iceCreamModal.appendChild(iceCreamListItem[1].cloneNode(true));
-        };
+        } else {
+            firstModal.classList.add("mostrar-modal");
+            modalTitle.textContent = "Disculpe.";
+            modalParagraph.textContent = `Pero su presupuesto es inferior a nuestro rango de precios.`;
+        }
+
+        const iceCreamFigures = iceCreamModal.querySelectorAll(".ice-cream");
+
+        iceCreamFigures.forEach((element) => {
+            const removeButton = element.querySelector("button");
+            element.removeChild(removeButton);
+        })
 
     };
 };
