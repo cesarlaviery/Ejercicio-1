@@ -333,6 +333,7 @@ body {
 
 .mostrar-modal--ice-creams {
     display: flex;
+    align-items: center;
 }
 
 .modal--margin {
