@@ -44,7 +44,7 @@ amountInput.addEventListener("keydown", (event) => {
 
     if (event.keyCode === 13) {
 
-        if (!SecondModal.classList.contains("mostrar-modal")) {
+        if (!SecondModal.classList.contains("mostrar-modal--ice-creams")) {
             validarNumero(amountInput);
         }
 
